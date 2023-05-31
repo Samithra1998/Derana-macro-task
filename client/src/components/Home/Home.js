@@ -14,6 +14,7 @@ import Form from "../Form/Form";
 import { useDispatch } from "react-redux";
 import { fetchPosts, searchPosts } from "../../action/posts";
 import makeStyles from "./styles";
+import { Tooltip } from "@mui/material";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -39,6 +40,11 @@ const Home = () => {
     } else {
       navigate("/");
     }
+  };
+
+  const resetPosts = () => {
+    setSearch("");
+    dispatch(fetchPosts());
   };
 
   return (
@@ -72,14 +78,37 @@ const Home = () => {
                     setSearch(e.target.value);
                   }}
                 />
-                <Button
-                  onClick={searchPost}
-                  className={classes.searchButton}
+                <Tooltip
+                  title="Search on Title"
                   variant="contained"
                   color="primary"
+                  placement="top"
                 >
-                  Search
-                </Button>
+                  <Button
+                    onClick={searchPost}
+                    className={classes.searchButton}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Search
+                  </Button>
+                </Tooltip>
+                <br />
+                <Tooltip
+                  title="Clear"
+                  variant="contained"
+                  color="primary"
+                  placement="bottom"
+                >
+                  <Button
+                    onClick={resetPosts}
+                    className={classes.searchButton}
+                    variant="contained"
+                    color="inherit"
+                  >
+                    Clear
+                  </Button>
+                </Tooltip>
               </AppBar>
               <Form currentId={currentId} setCurrentId={setCurrentId} />
             </Grid>

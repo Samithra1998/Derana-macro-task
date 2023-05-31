@@ -41,7 +41,7 @@ const Navbar = () => {
           variant="h3"
           align="center"
         >
-          Derana Macro Task
+          Minu Blogging App
         </Typography>
       </div>
       <Toolbar className={classes.toolbar}>
