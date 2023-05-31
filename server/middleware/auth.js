@@ -5,11 +5,11 @@ const auth = (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
     const isCustomAuth = token.length < 500;
 
-    let decodedData;
+    let data;
 
     if (token && isCustomAuth) {
-      decodedData = jwt.verify(token, "secret");
-      req.userId = decodedData?.id;
+      data = jwt.verify(token, "secret");
+      req.userId = data?.id;
     }
     next();
   } catch (error) {
