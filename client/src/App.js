@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Auth from "./components/Auth/Auth";
 import PostDetails from "./components/PostDetails/PostDetails";
 import Particle from "./components/Particle";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem("auth"));
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/posts" exact element={<Home />} />
             <Route path="/posts/search" exact element={<Home />} />
             <Route path="/posts/:id" exact element={<PostDetails />} />
+            <Route path="/contactus" exact element={<Contact/>}/>
             <Route
               path="/auth"
               exact

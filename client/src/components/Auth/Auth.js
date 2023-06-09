@@ -8,6 +8,7 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
+import DescriptionAlerts from "../Alert";
 import { useNavigate } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { signIn, signUp } from "../../action/auth";
@@ -47,6 +48,7 @@ const SignUp = () => {
       dispatch(signUp(form, navigate));
     } else {
       dispatch(signIn(form, navigate));
+      <DescriptionAlerts />;
     }
   };
 

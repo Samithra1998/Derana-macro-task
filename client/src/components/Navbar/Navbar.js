@@ -44,6 +44,16 @@ const Navbar = () => {
           Minu Blogging App
         </Typography>
       </div>
+      <div>
+        <Button
+          component={Link}
+          to="/contactus"
+          variant="outlined"
+          color="secondary"
+        >
+          Contact
+        </Button>
+      </div>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>

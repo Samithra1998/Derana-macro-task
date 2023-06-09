@@ -23,6 +23,11 @@ export default makeStyles((theme) => ({
     justifyContent: 'flex-end',
     width: '400px',
   },
+  contact: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
   profile: {
     display: 'flex',
     justifyContent: 'space-between',

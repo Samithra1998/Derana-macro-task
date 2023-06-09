@@ -45,6 +45,7 @@ const Home = () => {
   const resetPosts = () => {
     setSearch("");
     dispatch(fetchPosts());
+    navigate('/')
   };
 
   return (
