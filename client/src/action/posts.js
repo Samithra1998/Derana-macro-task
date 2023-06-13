@@ -5,11 +5,17 @@ import {
   UPDATE,
   DELETE,
   SEARCH,
+  GET_POST,
 } from "../actiontypes/actionTypes";
 
 export const fetchPosts = () => async (dispatch) => {
   const { data } = await api.getPosts();
   dispatch({ type: GET, payload: data });
+};
+
+export const fetchPost = (id) => async (dispatch) => {
+  const { post } = await api.getPost(id);
+  dispatch({ type: GET_POST, payload: post });
 };
 
 export const searchPosts = (searchQuery) => async (dispatch) => {
