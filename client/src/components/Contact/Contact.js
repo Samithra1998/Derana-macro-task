@@ -17,9 +17,10 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_wlieyd2', 'template_80h1lra', form.current, 'Hkyo-kSMOBdCFWjLM')
       .then((result) => {
           console.log(result.text);
+          alert('Message Sent')
       }, (error) => {
           console.log(error.text);
       });
