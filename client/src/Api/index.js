@@ -15,6 +15,7 @@ API.interceptors.request.use((req) => {
 
 //API endpoint to posts
 export const getPosts = () => API.get("/posts");
+export const getPost = (id) => API.get(`/posts/${id}`);
 export const getPostsBySearch = (searchQuery) =>
   API.get(`/posts/search?searchQuery=${searchQuery.search || 'none'}`);
 export const addPosts = (data) => API.post("/posts", data);
